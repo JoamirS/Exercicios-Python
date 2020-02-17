@@ -4,7 +4,7 @@
 from datetime import date
 
 
-def vote(YearOfBirth=0):
+def vote(YearOfBirth):
     currentAge = date.today().year - YearOfBirth
     if currentAge < 16:
         print(f'Com {currentAge}, você ainda não pode votar!')
@@ -15,7 +15,7 @@ def vote(YearOfBirth=0):
 
 
 YearOfBirth = int(input('Qual é o seu ano de nascimento? '))
-while 0 < YearOfBirth > date.today().year:
+while YearOfBirth > date.today().year or YearOfBirth < 1900:
     print('Digite um valor válido!')
     YearOfBirth = int(input('Qual é o seu ano de nascimento? '))
 
