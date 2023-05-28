@@ -1,7 +1,14 @@
-shopping_list = list()
+"""
+Floating-point format imprecision
+"""
 
-shopping_list.append('Teste')
-shopping_list.append('Posição 1')
+import decimal
 
-if 'Teste' in shopping_list:
-    print(shopping_list[0])
+number_one = decimal.Decimal(0.1)
+number_two = decimal.Decimal(0.7)
+
+result_sum_one = number_one + number_two
+
+print(result_sum_one)
+print(f'{result_sum_one:.2f}')
+print(round(result_sum_one, 3))
