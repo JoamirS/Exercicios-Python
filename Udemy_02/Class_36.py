@@ -43,3 +43,7 @@ list_b = [1, 2, 3, 6]
 length_small_list_result = check_small_list(list_a, list_b)
 result_sum_list = sum_two_list(list_a, list_b, length=length_small_list_result[0])
 print(result_sum_list)
+
+# another alternative
+list_sum = [x + y for x, y in zip(list_a, list_b)]
+print(list_sum)
