@@ -19,10 +19,6 @@ class MyReprMixin:
         return class_repr
 
 
-class SuperTime:
-    ...
-
-
 def my_planet(method):
     def internal(self, *args, **kwargs):
         result = method(self, *args, **kwargs)
@@ -35,13 +31,13 @@ def my_planet(method):
 
 
 @add_repr
-class Team(SuperTime, MyReprMixin):
+class Team:
     def __init__(self, name):
         self.name = name
 
 
 @add_repr
-class Planet(MyReprMixin):
+class Planet:
     def __init__(self, name):
         self.name = name
 
@@ -51,13 +47,14 @@ class Planet(MyReprMixin):
 
 
 brasil = Team('Brasil')
-portugal = Team('Portugal')
-earth = Planet('Terra')
-marte = Planet('Marte')
+print(brasil)
+# portugal = Team('Portugal')
+# earth = Planet('Terra')
+# marte = Planet('Marte')
 
 # print(brasil)
 # print(portugal)
 # print(earth)
 # print(marte)
-print(earth.talk_name())
+# print(earth.talk_name())
 # print(marte.talk_name())
