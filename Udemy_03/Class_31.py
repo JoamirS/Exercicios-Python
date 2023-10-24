@@ -6,8 +6,9 @@ class Multiply:
         self._multiplicator = 10
         print(func.__name__)
 
-    def __call__(self, *args, **kwargs):
-        result = self.func(*args, **kwargs)
+    def __call__(self, *args):
+        print(args)
+        result = self.func(*args)
         return result * self._multiplicator
 
 
@@ -17,5 +18,4 @@ def sum_function(x, y):
 
 
 two_twice = sum_function(2, 2)
-print(two_twice)
-
+# print(sum_function(2, 4))
