@@ -36,6 +36,7 @@ It is only possible withdraw if pass bank authentication (describe above)
 Bank authenticate for a method.
 """
 from abc import ABC
+import accounts
 
 
 class Person(ABC):
