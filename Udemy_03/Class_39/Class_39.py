@@ -39,26 +39,5 @@ from abc import ABC
 import accounts
 
 
-class Person(ABC):
-    def __init__(self, name, age):
-        self._name = name
-        self._age = age
 
-    @property
-    def get_name(self):
-        return self._name
-
-    @property
-    def get_age(self):
-        return self._age
-
-
-class Client(Person):
-    ...
-
-
-class Bank:
-    def __init__(self, client, account):
-        self.client = client
-        self.account = account
 

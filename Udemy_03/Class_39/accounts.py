@@ -1,5 +1,4 @@
 import abc
-from abc import ABC
 
 
 class Account(abc.ABC):
@@ -7,6 +6,10 @@ class Account(abc.ABC):
         self._agency = agency
         self._account_number = account_number
         self._balance = balance
+
+    @property
+    def get_agency(self):
+        return self._agency
 
     @abc.abstractmethod
     def withdraw_cash(self, value_to_withdraw):
@@ -16,7 +19,12 @@ class Account(abc.ABC):
         self._balance += value_to_deposit
 
     def details(self, msg=''):
-        print(f'Your balance is {self._balance:.2f} {msg}')
+        print(f'Seu saldo é {self._balance:.2f} {msg}')
+
+    def __repr__(self):
+        class_name = type(self).__name__
+        attrs = f'({self._agency}, {self._account_number}, {self._balance})'
+        return f'{class_name}, {attrs}'
 
 
 class SavingAccount(Account):
@@ -32,9 +40,9 @@ class SavingAccount(Account):
         self.details(f'Saque negado {value_to_withdraw}')
 
 
-class CurrentAccount(Account, ABC):
+class CurrentAccount(Account):
     def __init__(self, agency, account_number, balance=0, limit=0):
-        super().__init__(agency, account_number, balance, limit)
+        super().__init__(agency, account_number, balance)
         self.limit = limit
 
     def withdraw_cash(self, value_to_withdraw):
@@ -47,8 +55,3 @@ class CurrentAccount(Account, ABC):
 
         print('Não foi possível sacar o valor desejado.')
         self.details(f'Saque negado {value_to_withdraw:.2f}')
-
-
-if __name__ == '__main__':
-    account_saving = SavingAccount(111, 222, 0)
-    account_saving.withdraw_cash(10)
