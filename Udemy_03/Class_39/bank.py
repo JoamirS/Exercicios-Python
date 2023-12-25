@@ -27,7 +27,20 @@ class Bank:
         return False
 
     def authenticate(self, client, account):
-        return self.check_account(account=account) and self.check_client(client) and self.check_account(account)
+        return (self.check_account(account=account) and self.check_client(client) and self.check_account(account) and
+                self.check_if_account_is_client(account, client))
+
+    def __repr__(self):
+        class_name = type(self).__name__
+        attrs = f'({self.agencies}), ({self.accounts}), ({self.clients})'
+        return f'{class_name}, {attrs}'
+
+    def check_if_account_is_client(self, account, client):
+        if account is client.account:
+            print('check_if_account_is_client', True)
+            return True
+        print('check_if_account_is_client', False)
+        return False
 
 
 if __name__ == '__main__':
@@ -38,3 +51,5 @@ if __name__ == '__main__':
     client_2 = people.Client('Carlos', 18)
     account_2 = accounts.SavingAccount(2222, 223, 100)
     client_2.account = account_2
+
+
