@@ -51,5 +51,3 @@ if __name__ == '__main__':
     client_2 = people.Client('Carlos', 18)
     account_2 = accounts.SavingAccount(2222, 223, 100)
     client_2.account = account_2
-
-
