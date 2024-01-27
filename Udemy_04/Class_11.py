@@ -1,6 +1,7 @@
 import json
 from typing import TypedDict
 
+
 class Movie(TypedDict):
     title: str
     original_title: str
