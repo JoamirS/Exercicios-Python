@@ -1,7 +1,7 @@
 """
 Calculate bonus
 
-Create a program that calculate and give a bonus print about employees must be received according the rule:
+Create a program that calculates and gives a bonus print about employees must be received according the rule:
 
 The goal is a hundred sales.
 In case of the sales bigger or equal the goal, the value of employee bonus is ten percent of sale value.
