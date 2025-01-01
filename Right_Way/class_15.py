@@ -26,6 +26,11 @@
 
 # Make a program to ask the shift you study. Ask for M - Morning, A - Afternoon, N - Nocturnal
 # Print the message: Good Morning, Good Afternoon, Good Night, inválid value.
-print('M - Manhã | T - Tarde')
-print('Qual é o turno que você está estudando? ')
-
+print('M - Manhã | T - Tarde | N - Nortuno')
+input_shift_student = input('Qual é o turno que você está estudando? ')
+if input_shift_student == 'M':
+    print('Você estuda no turno da manhã')
+elif input_shift_student == 'T':
+    print('Você estuda no turno da tarde')
+elif input_shift_student == 'N':
+    print('Você estuda no turno da noite')
