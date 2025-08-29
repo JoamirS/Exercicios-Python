@@ -19,3 +19,8 @@ if len(first_string) == len(second_string):
     print('As strings possuem o mesmo tamanho.')
 else:
     print('As strings possuem tamanhos diferentes.')
+
+if first_string == second_string:
+    print('As duas strings possuem conteúdos iguais.')
+else:
+    print('As duas strings possuem conteúdos diferentes.')
